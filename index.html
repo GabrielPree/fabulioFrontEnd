@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fabulio | Onde Fabulas São Contadas</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo" onclick="window.location.href='index.html'"><img src="/img/logo.png" alt="Fabulio">
+    </div>
+    <div class="nav-links-left">
+        <a href="index.html">Pagina Inicial</a>
+        <a href="/pages/series.html">Séries</a>
+        <a href="/pages/filmes.html">Filmes</a>
+    </div>
+    <div class="nav-links-right">
+        <div class="dropdown">
+                <a href="#" class="dropdown-trigger">Gêneros ▼</a>
+            <div class="dropdown-menu">
+                <a href="pages/genero.html?genero=acao">Ação</a>
+                <a href="pages/genero.html?genero=aventura">Aventura</a>
+                <a href="pages/genero.html?genero=animacao">Animação</a>
+                <a href="pages/genero.html?genero=biografia">Biografia</a>
+                <a href="pages/genero.html?genero=comedia">Comédia</a>
+                <a href="pages/genero.html?genero=crime">Crime</a>
+                <a href="pages/genero.html?genero=drama">Drama</a>
+                <a href="pages/genero.html?genero=fantasia">Fantasia</a>
+                <a href="pages/genero.html?genero=historia">História</a>
+                <a href="pages/genero.html?genero=terror">Terror</a>
+                <a href="pages/genero.html?genero=misterio">Mistério</a>
+                <a href="pages/genero.html?genero=romance">Romance</a>
+                <a href="pages/genero.html?genero=ficcao-cientifica">Ficção Científica</a>
+                <a href="pages/genero.html?genero=esporte">Esporte</a>
+                <a href="pages/genero.html?genero=musica">Música</a>
+                <a href="pages/genero.html?genero=suspense">Suspense</a>
+                <a href="pages/genero.html?genero=guerra">Guerra</a>
+                <a href="pages/genero.html?genero=faroeste">Faroeste</a>
+            </div>
+        </div>
+        <a href="pages/minha-lista.html">Minha Lista</a>
+        <div class="search-icon" id="searchBtn">🔍︎</div>
+    </div>
+</header>
+
+<main id="app-root">
+    <div id="homeContainer">
+        <!-- Seção do hero com destaque -->
+        <section class="hero" id="heroSection">
+            <div class="hero-overlay"></div>
+            <div class="hero-overlay-bottom"></div>
+            <div class="hero-content">
+                <div class="serie-logo" id="heroLogoContainer">
+                <img id="heroLogoImage" src="" alt="Logo da série" style="display: none;">
+                </div>
+                <!-- Título alternativo (caso não tenha logo) -->
+                <h1 id="heroTitle" style="display: none;">Carregando...</h1>
+                <p id="heroDesc"></p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" id="heroWatchBtn">▶ Assistir Agora</button>
+                    <button class="btn-outline" id="heroInfoBtn">➕ Mais Informações</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="sectionsContainer">
+            <section class="section" data-name="top5">
+                <h2>Em Destaque no Fabulio</h2>
+                <div class="carrossel-wrapper">
+                    <button class="scroll-btn scroll-left">‹</button>
+                    <div class="carrossel"></div>
+                    <button class="scroll-btn scroll-right">›</button>
+                </div>
+            </section>
+
+            <section class="section" data-name="lancamentos">
+                <h2>Ultimos Lançamentos</h2>
+                <div class="carrossel-wrapper">
+                    <button class="scroll-btn scroll-left">‹</button>
+                    <div class="carrossel"></div>
+                    <button class="scroll-btn scroll-right">›</button>
+                </div>
+            </section>
+
+            <section class="section hidden" data-name="categoria">
+                <h2 id="categoriaTitulo">Categoria</h2>
+                <div class="carrossel-wrapper">
+                    <button class="scroll-btn scroll-left">‹</button>
+                    <div class="carrossel"></div>
+                    <button class="scroll-btn scroll-right">›</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Pagina de Detalhes série -->
+    <div id="detailContainer" style="display: none;"></div>
+
+    <!-- Modal de Pesquisa -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <div class="search-input-wrapper">
+                    <span class="search-icon-modal">🔍︎</span>
+                    <input type="text" id="searchInput" placeholder="Busque por filmes, séries, atores..." autofocus>
+                    <button class="search-close-btn" id="searchCloseBtn">✕</button>
+                </div>
+                <div class="search-filters">
+                    <button class="search-filter-btn active" data-tipo="todos">Todos</button>
+                    <button class="search-filter-btn" data-tipo="series">Séries</button>
+                    <button class="search-filter-btn" data-tipo="filmes">Filmes</button>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <span class="search-placeholder-icon">🔍︎</span>
+                    <p>Digite para começar a buscar</p>
+                    <span class="search-placeholder-sub">Encontre seus filmes e séries favoritos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="logo-footer" onclick="window.location.href='index.html'">
+        <img src="/img/logo.png" alt="Fabulio">
+    </div>
+    <div class="footer-links">
+        <a href="/pages/sobre.html">Sobre</a>
+        <a href="/pages/contato.html">Contato</a>
+    </div>
+        <p>© 2026 Fabulio Streaming | Onde Fábulas São Contadas</p>
+</footer>
+
+<script type="module" src="./js/getDados.js"></script>
+<script type="module" src="./js/index.js"></script>
+</body>
+</html>

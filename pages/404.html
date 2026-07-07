@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabulio | Pagina nao encontrada</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/404.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo" onclick="window.location.href='../index.html'">
+        <img src="../img/logo.png" alt="Fabulio">
+    </div>
+    <div class="nav-links-left">
+        <a href="../index.html">Pagina Inicial</a>
+        <a href="series.html">Séries</a>
+        <a href="filmes.html">Filmes</a>
+    </div>
+    <div class="nav-links-right">
+        <div class="dropdown">
+            <a href="#" class="dropdown-trigger">Gêneros ▼</a>
+            <div class="dropdown-menu">
+                <a href="genero.html?genero=acao">Ação</a>
+                <a href="genero.html?genero=aventura">Aventura</a>
+                <a href="genero.html?genero=animacao">Animação</a>
+                <a href="genero.html?genero=biografia">Biografia</a>
+                <a href="genero.html?genero=comedia">Comédia</a>
+                <a href="genero.html?genero=crime">Crime</a>
+                <a href="genero.html?genero=drama">Drama</a>
+                <a href="genero.html?genero=fantasia">Fantasia</a>
+                <a href="genero.html?genero=historia">História</a>
+                <a href="genero.html?genero=terror">Terror</a>
+                <a href="genero.html?genero=misterio">Mistério</a>
+                <a href="genero.html?genero=romance">Romance</a>
+                <a href="genero.html?genero=ficcao-cientifica">Ficção Científica</a>
+                <a href="genero.html?genero=esporte">Esporte</a>
+                <a href="genero.html?genero=musica">Música</a>
+                <a href="genero.html?genero=suspense">Suspense</a>
+                <a href="genero.html?genero=guerra">Guerra</a>
+                <a href="genero.html?genero=faroeste">Faroeste</a>
+            </div>
+        </div>
+        <a href="minha-lista.html">Minha Lista</a>
+        <div class="search-icon" id="searchBtn">🔍︎</div>
+    </div>
+</header>
+
+<main>
+    <div class="error-container">
+        <div class="error-image">
+            <svg viewBox="0 0 24 24">
+                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor"/>
+                <line x1="8" y1="20" x2="16" y2="20" stroke="currentColor"/>
+                <line x1="12" y1="20" x2="12" y2="16" stroke="currentColor"/>
+                <circle cx="8" cy="10" r="2" fill="#F5C16C" stroke="none"/>
+                <circle cx="16" cy="10" r="2" fill="#F5C16C" stroke="none"/>
+                <line x1="3" y1="6" x2="7" y2="6" stroke="#F5C16C" stroke-width="3"/>
+                <line x1="17" y1="6" x2="21" y2="6" stroke="#F5C16C" stroke-width="3"/>
+                <line x1="3" y1="18" x2="8" y2="18" stroke="#F5C16C" stroke-width="3"/>
+                <line x1="16" y1="18" x2="21" y2="18" stroke="#F5C16C" stroke-width="3"/>
+            </svg>
+        </div>
+
+        <div class="error-code">404</div>
+        <h1 class="error-title">Pagina nao encontrada</h1>
+        <p class="error-description">
+            Oops! O conteudo que voce procura parece ter saido do catalogo.
+            Talvez tenha sido removido, renomeado ou esta em manutencao.
+        </p>
+        <div class="error-buttons">
+            <a href="../index.html" class="btn-primary">Voltar para Home</a>
+            <a href="series.html" class="btn-outline">Explorar Series</a>
+            <a href="filmes.html" class="btn-outline">Explorar Filmes</a>
+        </div>
+    </div>
+
+    <!-- Modal de Pesquisa -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <div class="search-input-wrapper">
+                    <span class="search-icon-modal">🔍︎</span>
+                    <input type="text" id="searchInput" placeholder="Busque por filmes, series, atores..." autofocus>
+                    <button class="search-close-btn" id="searchCloseBtn">✕</button>
+                </div>
+                <div class="search-filters">
+                    <button class="search-filter-btn active" data-tipo="todos">Todos</button>
+                    <button class="search-filter-btn" data-tipo="series">Series</button>
+                    <button class="search-filter-btn" data-tipo="filmes">Filmes</button>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <span class="search-placeholder-icon">🔍︎</span>
+                    <p>Digite para começar a buscar</p>
+                    <span class="search-placeholder-sub">Encontre seus filmes e series favoritos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="logo-footer" onclick="window.location.href='../index.html'">
+        <img src="../img/logo.png" alt="Fabulio">
+    </div>
+    <div class="footer-links">
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </div>
+    <p>© 2026 Fabulio Streaming | Onde Fabulas Sao Contadas</p>
+</footer>
+
+<script type="module" src="../js/getDados.js"></script>
+<script type="module" src="../js/404.js"></script>
+</body>
+</html>

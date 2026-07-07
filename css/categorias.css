@@ -1,0 +1,56 @@
+/* Estilos para páginas de categorias */
+
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.categoria-card {
+    background: linear-gradient(135deg, #1A1A1D 0%, #2B124C 100%);
+    border-radius: 12px;
+    padding: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(90,46,166,0.3);
+}
+
+.categoria-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: #F5C16C;
+    box-shadow: 0 8px 20px rgba(90,46,166,0.3);
+}
+
+.categoria-nome {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F5F5F5;
+}
+
+.categoria-count {
+    font-size: 0.75rem;
+    color: #A1A1AA;
+    margin-top: 0.3rem;
+}
+
+.categoria-card:hover .categoria-nome {
+    color: #F5C16C;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .categorias-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .categoria-card {
+        padding: 0.8rem;
+    }
+    
+    .categoria-nome {
+        font-size: 0.85rem;
+    }
+}

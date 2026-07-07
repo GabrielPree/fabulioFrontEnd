@@ -1,0 +1,114 @@
+/* Estilos específicos para a página Sobre */
+
+.page-header {
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #FFF, #F5C16C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Container do conteúdo centralizado */
+.sobre-container {
+    padding: 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sobre-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #F5C16C;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid #F5C16C;
+    padding-left: 14px;
+}
+
+.sobre-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #E0E0E0;
+    margin-bottom: 1rem;
+}
+
+.sobre-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.sobre-container ul li {
+    color: #E0E0E0;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.sobre-container ul li::before {
+    content: "▸";
+    color: #F5C16C;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.sobre-container ul li strong {
+    color: #F5C16C;
+}
+
+.creditos-box {
+    background: #1A1A1D;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(90,46,166,0.3);
+    text-align: center;
+}
+
+.creditos-box img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.creditos-box p {
+    font-size: 0.9rem;
+    color: #A1A1AA;
+    margin-bottom: 0.5rem;
+}
+
+.creditos-box a {
+    color: #F5C16C;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.creditos-box a:hover {
+    color: #ffd58c;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sobre-container {padding: 1.5rem;}
+    .sobre-container h1 {font-size: 2rem;}
+    .sobre-container h2 {font-size: 1.2rem;}
+    .creditos-box {padding: 1.2rem;}
+    .creditos-box img {max-width: 150px;}
+}

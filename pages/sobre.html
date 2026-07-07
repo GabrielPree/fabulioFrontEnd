@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabulio | Sobre</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/sobre.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo" onclick="window.location.href='../index.html'">
+        <img src="../img/logo.png" alt="Fabulio">
+    </div>
+    <div class="nav-links-left">
+        <a href="../index.html">Pagina Inicial</a>
+        <a href="series.html">Séries</a>
+        <a href="filmes.html">Filmes</a>
+    </div>
+    <div class="nav-links-right">
+        <div class="dropdown">
+            <a href="#" class="dropdown-trigger">Gêneros ▼</a>
+            <div class="dropdown-menu">
+                <a href="genero.html?genero=acao">Ação</a>
+                <a href="genero.html?genero=aventura">Aventura</a>
+                <a href="genero.html?genero=animacao">Animação</a>
+                <a href="genero.html?genero=biografia">Biografia</a>
+                <a href="genero.html?genero=comedia">Comédia</a>
+                <a href="genero.html?genero=crime">Crime</a>
+                <a href="genero.html?genero=drama">Drama</a>
+                <a href="genero.html?genero=fantasia">Fantasia</a>
+                <a href="genero.html?genero=historia">História</a>
+                <a href="genero.html?genero=terror">Terror</a>
+                <a href="genero.html?genero=misterio">Mistério</a>
+                <a href="genero.html?genero=romance">Romance</a>
+                <a href="genero.html?genero=ficcao-cientifica">Ficção Científica</a>
+                <a href="genero.html?genero=esporte">Esporte</a>
+                <a href="genero.html?genero=musica">Música</a>
+                <a href="genero.html?genero=suspense">Suspense</a>
+                <a href="genero.html?genero=guerra">Guerra</a>
+                <a href="genero.html?genero=faroeste">Faroeste</a>
+            </div>
+        </div>
+        <a href="minha-lista.html">Minha Lista</a>
+        <div class="search-icon" id="searchBtn">🔍︎</div>
+    </div>
+</header>
+
+<main>
+    <div class="page-header">
+        <h1>Sobre o Fabulio</h1>
+        <p>Saiba mais sobre nossa plataforma e os créditos das APIs utilizadas.</p>
+    </div>
+
+    <div class="sobre-container">
+        <p>
+            O <strong>Fabulio</strong> é uma plataforma de streaming que reúne informações sobre filmes e séries,
+            permitindo que você explore, descubra e organize seus conteúdos favoritos em um só lugar.
+        </p>
+
+        <h2>Funcionalidades</h2>
+        <ul>
+            <li><strong>Catálogo:</strong> Explore filmes e séries com avaliações, sinopses e detalhes completos.</li>
+            <li><strong>Gêneros:</strong> Navegue por categorias como Ação, Comédia, Drama, Terror e muito mais.</li>
+            <li><strong>Lista de Favoritos:</strong> Salve seus filmes e séries preferidos em uma lista personalizada.</li>
+            <li><strong>Busca:</strong> Encontre rapidamente o que você procura.</li>
+            <li><strong>Detalhes:</strong> Informações completas sobre cada título, incluindo elenco, diretor e avaliação.</li>
+        </ul>
+
+        <h2>Tecnologias Utilizadas</h2>
+        <ul>
+            <li><strong>Front-end:</strong> HTML5, CSS3, JavaScript</li>
+            <li><strong>Back-end:</strong> Java com Spring Boot</li>
+            <li><strong>Banco de Dados:</strong> PostgreSQL</li>
+            <li><strong>API Externas:</strong> OMDB, Fanart, TMDB</li>
+        </ul>
+
+        <h2>Créditos da API</h2>
+        <div class="creditos-box">
+            <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB Logo">
+            <p>
+                Este produto utiliza a API do <strong>The Movie Database (TMDB)</strong>.
+            </p>
+            <p>
+                utilizada para converter imdb_id em tvdb_id, e para obter as imagens das séries via FanArt api.
+            </p>
+            <p>
+                <a href="https://www.themoviedb.org/" target="_blank">Visite o site da TMDB</a>
+            </p>
+            <p style="font-size: 0.8rem; color: #6B6B76; margin-top: 1rem;">
+                Este produto não é endossado, certificado ou de outra forma aprovado pela TMDB.
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal de Pesquisa -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <div class="search-input-wrapper">
+                    <span class="search-icon-modal">🔍︎</span>
+                    <input type="text" id="searchInput" placeholder="Busque por filmes, séries, atores..." autofocus>
+                    <button class="search-close-btn" id="searchCloseBtn">✕</button>
+                </div>
+                <div class="search-filters">
+                    <button class="search-filter-btn active" data-tipo="todos">Todos</button>
+                    <button class="search-filter-btn" data-tipo="series">Séries</button>
+                    <button class="search-filter-btn" data-tipo="filmes">Filmes</button>
+                </div>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-placeholder">
+                    <span class="search-placeholder-icon">🔍︎</span>
+                    <p>Digite para começar a buscar</p>
+                    <span class="search-placeholder-sub">Encontre seus filmes e séries favoritos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="logo-footer" onclick="window.location.href='../index.html'">
+        <img src="../img/logo.png" alt="Fabulio">
+    </div>
+    <div class="footer-links">
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+    </div>
+    <p>© 2026 Fabulio Streaming | Onde Fábulas São Contadas</p>
+</footer>
+
+<script type="module" src="../js/getDados.js"></script>
+<script type="module" src="../js/sobre.js"></script>
+</body>
+</html>
