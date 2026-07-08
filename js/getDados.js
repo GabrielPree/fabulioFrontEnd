@@ -1,4 +1,5 @@
-const baseURL = 'http://localhost:8080';
+// deixe http://localhost:8080 se estiver rodando localmente, caso contrário, altere para a URL do seu backend
+const baseURL = 'https://fabulio.onrender.com';
 
 export default async function getDados(endpoint) {
     try {
