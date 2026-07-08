@@ -1,184 +1,209 @@
 /* Estilos específicos para a página Contato */
 
 .page-header {
-    text-align: center;
+  text-align: center;
 }
 
 .page-header h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    background: linear-gradient(135deg, #FFF, #F5C16C);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, #fff, #f5c16c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
 }
 
 .page-header p {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #ffffff;
-    max-width: 600px;
-    margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Container principal */
 .contato-container {
-    padding: 2rem 4rem;
-    max-width: 900px;
-    margin: 0 auto;
+  padding: 2rem 4rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .contato-info {
-    text-align: center;
-    margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .contato-info p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #E0E0E0;
-    margin-bottom: 0.8rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
 }
 
 .contato-info strong {
-    color: #F5C16C;
+  color: #f5c16c;
 }
 
 /* Grid de links de contato */
 .contato-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
 }
 
 .contato-card {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    background: #1A1A1D;
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    text-decoration: none;
-    color: #F5F5F5;
-    border: 1px solid rgba(90,46,166,0.3);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #1a1a1d;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  color: #f5f5f5;
+  border: 1px solid rgba(90, 46, 166, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .contato-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #F5C16C, #5A2EA6);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f5c16c, #5a2ea6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .contato-card:hover::before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .contato-card:hover {
-    transform: translateY(-4px);
-    border-color: #F5C16C;
-    box-shadow: 0 8px 25px rgba(90,46,166,0.3);
+  transform: translateY(-4px);
+  border-color: #f5c16c;
+  box-shadow: 0 8px 25px rgba(90, 46, 166, 0.3);
 }
 
 .contato-card .contato-icon {
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
 .contato-card.github .contato-icon {
-    color: #F5F5F5;
-    background: rgba(255,255,255,0.05);
+  color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .contato-card.linkedin .contato-icon {
-    color: #0A66C2;
-    background: rgba(10,102,194,0.1);
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
 }
 
 .contato-card:hover .contato-icon {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .contato-card .contato-icon svg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .contato-info-text {
-    flex: 1;
+  flex: 1;
 }
 
 .contato-info-text h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #F5F5F5;
-    margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f5f5f5;
+  margin-bottom: 0.2rem;
 }
 
 .contato-info-text p {
-    font-size: 0.85rem;
-    color: #A1A1AA;
-    margin: 0;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  margin: 0;
 }
 
 .contato-arrow {
-    font-size: 1.5rem;
-    color: #A1A1AA;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+  font-size: 1.5rem;
+  color: #a1a1aa;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .contato-card:hover .contato-arrow {
-    color: #F5C16C;
-    transform: translateX(4px);
+  color: #f5c16c;
+  transform: translateX(4px);
 }
 
 .contato-extra {
-    text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    margin-top: 1rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 1rem;
 }
 
 .contato-extra p {
-    color: #A1A1AA;
-    font-size: 0.95rem;
+  color: #a1a1aa;
+  font-size: 0.95rem;
 }
 
 .contato-extra strong {
-    color: #F5C16C;
+  color: #f5c16c;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .contato-container {padding: 1.5rem;}
-    .page-header h1 {font-size: 2rem;}
-    .contato-links {grid-template-columns: 1fr; gap: 1rem;}
-    .contato-card {padding: 1.2rem 1.5rem;}
-    .contato-card .contato-icon {width: 48px; height: 48px;}
-    .contato-card .contato-icon svg {width: 28px;height: 28px;}
-    .contato-info-text h3 {font-size: 1rem;}
+  .contato-container {
+    padding: 1.5rem;
+  }
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  .contato-links {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .contato-card {
+    padding: 1.2rem 1.5rem;
+  }
+  .contato-card .contato-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .contato-card .contato-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+  .contato-info-text h3 {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .contato-card {flex-direction: column; text-align: center; padding: 1.2rem;}
-    .contato-arrow {display: none;}
-    .contato-info-text p {font-size: 0.8rem;}
+  .contato-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem;
+  }
+  .contato-arrow {
+    display: none;
+  }
+  .contato-info-text p {
+    font-size: 0.8rem;
+  }
 }
