@@ -375,7 +375,7 @@ function initNavegacao() {
         };
     }
     
-    const homeLink = document.querySelector('.nav-links-left a[href="index.html"]');
+    const homeLink = document.querySelector('.nav-links-left a[href="/fabulioFrontEnd/"]');
     if (homeLink) {
         homeLink.onclick = (e) => {
             e.preventDefault();
