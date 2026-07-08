@@ -115,6 +115,7 @@ h4 {
   align-items: center;
   justify-content: space-between;
   flex: 1;
+  width: 100%;
 }
 
 .nav-links-left {
@@ -127,7 +128,7 @@ h4 {
   display: flex;
   gap: 2.2rem;
   align-items: center;
-  margin-left: auto;
+  margin-left: auto !important;
 }
 
 .nav-links-left a,
