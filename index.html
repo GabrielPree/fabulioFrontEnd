@@ -6,6 +6,7 @@
     <title>Fabulio | Onde Fabulas São Contadas</title>
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
 
@@ -13,37 +14,47 @@
     <div class="logo" onclick="window.location.href='/fabulioFrontEnd/'">
         <img src="./img/logo.png" alt="Fabulio">
     </div>
-    <div class="nav-links-left">
-        <a href="/fabulioFrontEnd/">Pagina Inicial</a>
-        <a href="./pages/series.html">Séries</a>
-        <a href="./pages/filmes.html">Filmes</a>
-    </div>
-    <div class="nav-links-right">
-        <div class="dropdown">
-                <a href="#" class="dropdown-trigger">Gêneros ▼</a>
-            <div class="dropdown-menu">
-                <a href="./pages/genero.html?genero=acao">Ação</a>
-                <a href="./pages/genero.html?genero=aventura">Aventura</a>
-                <a href="./pages/genero.html?genero=animacao">Animação</a>
-                <a href="./pages/genero.html?genero=biografia">Biografia</a>
-                <a href="./pages/genero.html?genero=comedia">Comédia</a>
-                <a href="./pages/genero.html?genero=crime">Crime</a>
-                <a href="./pages/genero.html?genero=drama">Drama</a>
-                <a href="./pages/genero.html?genero=fantasia">Fantasia</a>
-                <a href="./pages/genero.html?genero=historia">História</a>
-                <a href="./pages/genero.html?genero=terror">Terror</a>
-                <a href="./pages/genero.html?genero=misterio">Mistério</a>
-                <a href="./pages/genero.html?genero=romance">Romance</a>
-                <a href="./pages/genero.html?genero=ficcao-cientifica">Ficção Científica</a>
-                <a href="./pages/genero.html?genero=esporte">Esporte</a>
-                <a href="./pages/genero.html?genero=musica">Música</a>
-                <a href="./pages/genero.html?genero=suspense">Suspense</a>
-                <a href="./pages/genero.html?genero=guerra">Guerra</a>
-                <a href="./pages/genero.html?genero=faroeste">Faroeste</a>
-            </div>
+
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-links-wrapper" id="navLinksWrapper">
+        <div class="nav-links-left">
+            <a href="/fabulioFrontEnd/">Pagina Inicial</a>
+            <a href="./pages/series.html">Séries</a>
+            <a href="./pages/filmes.html">Filmes</a>
         </div>
-        <a href="./pages/minha-lista.html">Minha Lista</a>
-        <div class="search-icon" id="searchBtn">🔍︎</div>
+        <div class="nav-links-right">
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">Gêneros ▼</a>
+                <div class="dropdown-menu">
+                    <a href="./pages/genero.html?genero=acao">Ação</a>
+                    <a href="./pages/genero.html?genero=aventura">Aventura</a>
+                    <a href="./pages/genero.html?genero=animacao">Animação</a>
+                    <a href="./pages/genero.html?genero=biografia">Biografia</a>
+                    <a href="./pages/genero.html?genero=comedia">Comédia</a>
+                    <a href="./pages/genero.html?genero=crime">Crime</a>
+                    <a href="./pages/genero.html?genero=drama">Drama</a>
+                    <a href="./pages/genero.html?genero=fantasia">Fantasia</a>
+                    <a href="./pages/genero.html?genero=historia">História</a>
+                    <a href="./pages/genero.html?genero=terror">Terror</a>
+                    <a href="./pages/genero.html?genero=misterio">Mistério</a>
+                    <a href="./pages/genero.html?genero=romance">Romance</a>
+                    <a href="./pages/genero.html?genero=ficcao-cientifica">Ficção Científica</a>
+                    <a href="./pages/genero.html?genero=esporte">Esporte</a>
+                    <a href="./pages/genero.html?genero=musica">Música</a>
+                    <a href="./pages/genero.html?genero=suspense">Suspense</a>
+                    <a href="./pages/genero.html?genero=guerra">Guerra</a>
+                    <a href="./pages/genero.html?genero=faroeste">Faroeste</a>
+                </div>
+            </div>
+            <a href="./pages/minha-lista.html">Minha Lista</a>
+            <div class="search-icon" id="searchBtn">🔍︎</div>
+        </div>
     </div>
 </header>
 
@@ -139,5 +150,6 @@
 
 <script type="module" src="./js/getDados.js"></script>
 <script type="module" src="./js/index.js"></script>
+<script type="module" src="./js/menu.js"></script>
 </body>
 </html>

@@ -13,37 +13,46 @@
     <div class="logo" onclick="window.location.href='/fabulioFrontEnd/'">
         <img src="../img/logo.png" alt="Fabulio">
     </div>
-    <div class="nav-links-left">
-        <a href="/fabulioFrontEnd/">Pagina Inicial</a>
-        <a href="series.html">Séries</a>
-        <a href="filmes.html">Filmes</a>
-    </div>
-    <div class="nav-links-right">
-        <div class="dropdown">
-            <a href="#" class="dropdown-trigger">Gêneros ▼</a>
-            <div class="dropdown-menu">
-                <a href="genero.html?genero=acao">Ação</a>
-                <a href="genero.html?genero=aventura">Aventura</a>
-                <a href="genero.html?genero=animacao">Animação</a>
-                <a href="genero.html?genero=biografia">Biografia</a>
-                <a href="genero.html?genero=comedia">Comédia</a>
-                <a href="genero.html?genero=crime">Crime</a>
-                <a href="genero.html?genero=drama">Drama</a>
-                <a href="genero.html?genero=fantasia">Fantasia</a>
-                <a href="genero.html?genero=historia">História</a>
-                <a href="genero.html?genero=terror">Terror</a>
-                <a href="genero.html?genero=misterio">Mistério</a>
-                <a href="genero.html?genero=romance">Romance</a>
-                <a href="genero.html?genero=ficcao-cientifica">Ficção Científica</a>
-                <a href="genero.html?genero=esporte">Esporte</a>
-                <a href="genero.html?genero=musica">Música</a>
-                <a href="genero.html?genero=suspense">Suspense</a>
-                <a href="genero.html?genero=guerra">Guerra</a>
-                <a href="genero.html?genero=faroeste">Faroeste</a>
-            </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="nav-links-wrapper" id="navLinksWrapper">
+        <div class="nav-links-left">
+            <a href="/fabulioFrontEnd/">Pagina Inicial</a>
+            <a href="series.html">Séries</a>
+            <a href="filmes.html">Filmes</a>
         </div>
-        <a href="minha-lista.html" class="active">Minha Lista</a>
-        <div class="search-icon" id="searchBtn">🔍︎</div>
+        <div class="nav-links-right">
+            <div class="dropdown">
+                <a href="#" class="dropdown-trigger">Gêneros</a>
+                <div class="dropdown-menu">
+                    <a href="genero.html?genero=acao">Ação</a>
+                    <a href="genero.html?genero=aventura">Aventura</a>
+                    <a href="genero.html?genero=animacao">Animação</a>
+                    <a href="genero.html?genero=biografia">Biografia</a>
+                    <a href="genero.html?genero=comedia">Comédia</a>
+                    <a href="genero.html?genero=crime">Crime</a>
+                    <a href="genero.html?genero=drama">Drama</a>
+                    <a href="genero.html?genero=fantasia">Fantasia</a>
+                    <a href="genero.html?genero=historia">História</a>
+                    <a href="genero.html?genero=terror">Terror</a>
+                    <a href="genero.html?genero=misterio">Mistério</a>
+                    <a href="genero.html?genero=romance">Romance</a>
+                    <a href="genero.html?genero=ficcao-cientifica">Ficção Científica</a>
+                    <a href="genero.html?genero=esporte">Esporte</a>
+                    <a href="genero.html?genero=musica">Música</a>
+                    <a href="genero.html?genero=suspense">Suspense</a>
+                    <a href="genero.html?genero=guerra">Guerra</a>
+                    <a href="genero.html?genero=faroeste">Faroeste</a>
+                </div>
+            </div>
+            <a href="minha-lista.html">Minha Lista</a>
+            <div class="search-icon" id="searchBtn">🔍︎</div>
+        </div>
     </div>
 </header>
 
@@ -116,5 +125,6 @@
 
 <script type="module" src="../js/getDados.js"></script>
 <script type="module" src="../js/minha-lista.js"></script>
+<script type="module" src="./js/menu.js"></script>
 </body>
 </html>
