@@ -133,27 +133,27 @@ async function carregarRecomendados(generos) {
   if (!generos || generos.length === 0) return;
 
   try {
-    const todosFilmes = await getDados("/filmes");
     const generoPrincipal = generos[0].toLowerCase();
 
-    const recomendados = todosFilmes
-      .filter(
-        (filme) =>
-          filme.id != filmeId &&
-          filme.generos &&
-          filme.generos.some((g) => g.toLowerCase() === generoPrincipal),
-      )
+    // Usar o endpoint de categoria para buscar filmes do mesmo gênero
+    const recomendados = await getDados(
+      `/filmes/categoria/${encodeURIComponent(generoPrincipal)}`,
+    );
+
+    // Filtrar para remover o filme atual
+    const recomendadosFiltrados = (recomendados || [])
+      .filter((filme) => filme.id != filmeId)
       .slice(0, 10);
 
     const carrossel = document.getElementById("recomendadosCarrossel");
 
-    if (recomendados.length === 0) {
+    if (recomendadosFiltrados.length === 0) {
       carrossel.innerHTML =
         '<div class="loading">Nenhum filme recomendado encontrado.</div>';
       return;
     }
 
-    carrossel.innerHTML = recomendados
+    carrossel.innerHTML = recomendadosFiltrados
       .map(
         (filme) => `
             <div class="card" data-id="${filme.id}">

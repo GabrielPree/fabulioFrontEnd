@@ -276,16 +276,13 @@ function criarSections() {
       // Carregar filmes ou séries do gênero
       try {
         const endpoint =
-          section.generoTipo === "filmes" ? "/filmes" : "/series";
-        const todosItens = await getDados(endpoint);
+          section.generoTipo === "filmes"
+            ? `/filmes/categoria/${encodeURIComponent(section.generoSlug)}`
+            : `/series/categoria/${encodeURIComponent(section.generoSlug)}`;
 
-        const itensFiltrados = todosItens.filter(
-          (item) =>
-            item.generos &&
-            item.generos.some((g) => g.toLowerCase() === section.generoSlug),
-        );
+        const itensFiltrados = await getDados(endpoint);
 
-        if (itensFiltrados.length > 0) {
+        if (itensFiltrados && itensFiltrados.length > 0) {
           const limitados = itensFiltrados.slice(0, 15);
           criarListaFilmes(
             elemento,

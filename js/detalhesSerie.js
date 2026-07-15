@@ -169,27 +169,27 @@ async function carregarRecomendadosSeries(generos) {
   if (!generos || generos.length === 0) return;
 
   try {
-    const todasSeries = await getDados("/series");
     const generoPrincipal = generos[0].toLowerCase();
 
-    const recomendados = todasSeries
-      .filter(
-        (serie) =>
-          serie.id != serieId &&
-          serie.generos &&
-          serie.generos.some((g) => g.toLowerCase() === generoPrincipal),
-      )
+    // Usar o endpoint de categoria para buscar séries do mesmo gênero
+    const recomendados = await getDados(
+      `/series/categoria/${encodeURIComponent(generoPrincipal)}`,
+    );
+
+    // Filtrar para remover a série atual
+    const recomendadosFiltrados = (recomendados || [])
+      .filter((serie) => serie.id != serieId)
       .slice(0, 10);
 
     const carrossel = document.getElementById("recomendadosCarrosselSeries");
 
-    if (recomendados.length === 0) {
+    if (recomendadosFiltrados.length === 0) {
       carrossel.innerHTML =
         '<div class="loading">Nenhuma série recomendada encontrada.</div>';
       return;
     }
 
-    carrossel.innerHTML = recomendados
+    carrossel.innerHTML = recomendadosFiltrados
       .map(
         (serie) => `
             <div class="card" data-id="${serie.id}">

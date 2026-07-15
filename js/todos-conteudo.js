@@ -47,8 +47,8 @@ async function carregarConteudo() {
     const container = document.getElementById("todosGrid");
     const paginaDestino =
       tipoValido === "filmes"
-        ? "/pages/detalhesFilme.html"
-        : "/pages/detalhesSerie.html";
+        ? "detalhesFilme.html"
+        : "detalhesSerie.html";
 
     // Se não houver itens, redirecionar para 404
     if (!itens || itens.length === 0) {

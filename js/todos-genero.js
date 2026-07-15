@@ -82,8 +82,8 @@ async function carregarTodos() {
     const container = document.getElementById("todosGrid");
     const paginaDestino =
       tipo === "filmes"
-        ? "/pages/detalhesFilme.html"
-        : "/pages/detalhesSerie.html";
+        ? "detalhesFilme.html"
+        : "detalhesSerie.html";
 
     // Se não houver itens para o gênero, redirecionar para 404
     if (!itensFiltrados || itensFiltrados.length === 0) {
