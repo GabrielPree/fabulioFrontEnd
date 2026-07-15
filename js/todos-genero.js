@@ -72,14 +72,12 @@ async function carregarTodos() {
     `Todos os ${tipoTexto.toLowerCase()} do gênero ${tituloGenero}.`;
 
   try {
-    const endpoint = tipo === "filmes" ? "/filmes" : "/series";
-    const todosItens = await getDados(endpoint);
+    const endpoint =
+      tipo === "filmes"
+        ? `/filmes/categoria/${encodeURIComponent(generoSlug)}`
+        : `/series/categoria/${encodeURIComponent(generoSlug)}`;
 
-    const itensFiltrados = todosItens.filter(
-      (item) =>
-        item.generos &&
-        item.generos.some((g) => g.toLowerCase() === generoSlug),
-    );
+    const itensFiltrados = await getDados(endpoint);
 
     const container = document.getElementById("todosGrid");
     const paginaDestino =
@@ -88,7 +86,7 @@ async function carregarTodos() {
         : "/pages/detalhesSerie.html";
 
     // Se não houver itens para o gênero, redirecionar para 404
-    if (itensFiltrados.length === 0) {
+    if (!itensFiltrados || itensFiltrados.length === 0) {
       window.location.href = "404.html";
       return;
     }

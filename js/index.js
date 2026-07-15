@@ -340,7 +340,16 @@ async function carregarPorCategoria(categoria, nomeCategoria) {
       getDados(`/filmes/categoria/${encodeURIComponent(categoria)}`),
     ]);
 
-    const todosItens = [...(seriesData || []), ...(filmesData || [])];
+    const seriesComTipo = (seriesData || []).map((item) => ({
+      ...item,
+      tipo: "series",
+    }));
+    const filmesComTipo = (filmesData || []).map((item) => ({
+      ...item,
+      tipo: "filmes",
+    }));
+
+    const todosItens = [...seriesComTipo, ...filmesComTipo];
 
     if (todosItens.length === 0) {
       const carrossel = elementos.categoria.querySelector(".carrossel");
@@ -354,29 +363,28 @@ async function carregarPorCategoria(categoria, nomeCategoria) {
 
     carrossel.innerHTML = todosItens
       .map((item) => {
-        const tipo = item.hasOwnProperty("temporadas") ? "series" : "filmes";
         const paginaDestino =
-          tipo === "series"
+          item.tipo === "series"
             ? "pages/detalhesSerie.html"
             : "pages/detalhesFilme.html";
         return `
-                <div class="card" data-id="${item.id}" data-tipo="${tipo}">
-                    <a href="${paginaDestino}?id=${item.id}">
-                        <img src="${item.poster}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=FABULIO'">
-                    </a>
-                    <div class="card-info">
-                        <strong>${item.titulo}</strong>
-                        <span class="rating-wrapper">
-                            <span class="rating-icon">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#F5C16C" stroke="#F5C16C" stroke-width="1">
-                                    <polygon points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27"/>
-                                </svg>
+                    <div class="card" data-id="${item.id}" data-tipo="${item.tipo}">
+                        <a href="${paginaDestino}?id=${item.id}">
+                            <img src="${item.poster}" alt="${item.titulo}" onerror="this.src='https://via.placeholder.com/300x450?text=FABULIO'">
+                        </a>
+                        <div class="card-info">
+                            <strong>${item.titulo}</strong>
+                            <span class="rating-wrapper">
+                                <span class="rating-icon">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#F5C16C" stroke="#F5C16C" stroke-width="1">
+                                        <polygon points="12 17.27 18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21 12 17.27"/>
+                                    </svg>
+                                </span>
+                                ${item.avaliacao ?? "N/A"}/10
                             </span>
-                            ${item.avaliacao ?? "N/A"}/10
-                        </span>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
       })
       .join("");
 
